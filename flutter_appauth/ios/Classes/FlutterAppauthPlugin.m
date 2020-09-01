@@ -57,6 +57,7 @@
 @interface AuthorizationTokenRequestParameters : TokenRequestParameters
 @property(nonatomic, strong) NSString *loginHint;
 @property(nonatomic, strong) NSArray *promptValues;
+@property(nonatomic, strong) NSString *state;
 @end
 
 @implementation AuthorizationTokenRequestParameters
@@ -64,6 +65,7 @@
     [super processArguments:arguments];
     _loginHint = [ArgumentProcessor processArgumentValue:arguments withKey:@"loginHint"];
     _promptValues = [ArgumentProcessor processArgumentValue:arguments withKey:@"promptValues"];
+    _state = [ArgumentProcessor processArgumentValue:arguments withKey:@"state"];
     return self;
 }
 @end
