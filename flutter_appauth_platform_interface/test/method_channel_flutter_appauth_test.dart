@@ -23,7 +23,7 @@ void main() {
   test('authorize', () async {
     await flutterAppAuth.authorize(AuthorizationRequest(
         'someClientId', 'someRedirectUrl',
-        discoveryUrl: 'someDiscoveryUrl', loginHint: 'someLoginHint'));
+        discoveryUrl: 'someDiscoveryUrl', loginHint: 'someLoginHint', state: 'abcdefghijklmnopabcdefghijklmnop'));
     expect(
       log,
       <Matcher>[
@@ -33,6 +33,7 @@ void main() {
           'redirectUrl': 'someRedirectUrl',
           'discoveryUrl': 'someDiscoveryUrl',
           'loginHint': 'someLoginHint',
+          'state': 'abcdefghijklmnopabcdefghijklmnop',
           'scopes': null,
           'serviceConfiguration': null,
           'additionalParameters': null,
@@ -47,7 +48,7 @@ void main() {
   test('authorizeAndExchangeCode', () async {
     await flutterAppAuth.authorizeAndExchangeCode(AuthorizationTokenRequest(
         'someClientId', 'someRedirectUrl',
-        discoveryUrl: 'someDiscoveryUrl', loginHint: 'someLoginHint'));
+        discoveryUrl: 'someDiscoveryUrl', loginHint: 'someLoginHint', state: 'abcdefghijklmnopabcdefghijklmnop'));
     expect(
       log,
       <Matcher>[
@@ -57,6 +58,7 @@ void main() {
           'redirectUrl': 'someRedirectUrl',
           'discoveryUrl': 'someDiscoveryUrl',
           'loginHint': 'someLoginHint',
+          'state': 'abcdefghijklmnopabcdefghijklmnop',
           'scopes': null,
           'serviceConfiguration': null,
           'additionalParameters': null,

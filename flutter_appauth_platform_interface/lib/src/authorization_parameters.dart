@@ -9,4 +9,8 @@ mixin AuthorizationParameters {
   ///
   /// This property is only applicable to iOS versions 13 and above.
   bool preferEphemeralSession;
+
+  // Used by Authorization Server to verify the login attempt.
+  String state;
+
 }

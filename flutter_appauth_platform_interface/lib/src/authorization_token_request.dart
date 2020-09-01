@@ -15,6 +15,7 @@ class AuthorizationTokenRequest extends TokenRequest
     AuthorizationServiceConfiguration serviceConfiguration,
     Map<String, String> additionalParameters,
     String issuer,
+    String state,
     String discoveryUrl,
     List<String> promptValues,
     bool allowInsecureConnections = false,
@@ -31,6 +32,7 @@ class AuthorizationTokenRequest extends TokenRequest
           additionalParameters: additionalParameters,
           allowInsecureConnections: allowInsecureConnections,
         ) {
+    this.state = state;
     this.loginHint = loginHint;
     this.promptValues = promptValues;
     this.preferEphemeralSession = preferEphemeralSession;
